@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Below is the crypto search you did lol<br></h1>
+
+<table class="table table-striped text-center w-30 p-1">
+    <tr>
+        <th class="col">Name</th>
+        <th class="col">Symbol</th>
+        <th class="col">Price</th>
+        <th class="col">Percent Change in 24 hours</th>
+    </tr>
+    {% for data in res %}
+    <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.symbol }}</td>
+        <td>{{ data.quote.USD.price }}</td>
+        <td {% if data.quote.USD.percent_change_24h > 0 %} class="text-success"
+            {% elif data.quote.USD.percent_change_24h < 0 %} class="text-danger"
+            {% endif %}
+            >{{ data.quote.USD.percent_change_24h }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
