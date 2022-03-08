@@ -1,5 +1,6 @@
 #  Recipe Box
 ### A place for users to find, save, and take notes for recipes
+See it in action here: https://rb-recipebox.herokuapp.com/
 
 Or set it up for yourself:
 1. Create a `config.py` file on the same level as the `app.py` file. 
